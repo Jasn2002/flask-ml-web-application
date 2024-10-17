@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Prediction</title>
+</head>
+<body>
+    <h1>Enter Student Data for Performance Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="hours_studied">Hours Studied (per week):</label>
+        <input type="number" id="hours_studied" name="hours_studied" min="0" required><br><br>
+
+        <label for="attendance">Attendance (%):</label>
+        <input type="number" id="attendance" name="attendance" min="0" max="100" required><br><br>
+
+        <label for="previous_scores">Previous Scores (previous test):</label>
+        <input type="number" id="previous_scores" name="previous_scores" min="0" max="100" required><br><br>
+
+        <label for="tutoring_sessions">Tutoring Sessions (per month):</label>
+        <input type="number" id="tutoring_sessions" name="tutoring_sessions" min="0" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
