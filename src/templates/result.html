@@ -4,11 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
+    <!-- Google Fonts: Poppins for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply Google font to the entire page */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif; /* Modern and clean font */
+            background: linear-gradient(to bottom, #2a0d3a, #000000); /* Gradient from purple to black */
+            position: relative;
+            overflow-y: auto; /* Enable vertical scrolling if needed */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white; /* White text for contrast */
+        }
+
+        /* Form Container and Box */
+        .result-box {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 500px; /* Maximum width of the result box */
+            min-height: 60vh; /* Make the result box take almost half the screen height */
+            overflow-y: auto; /* Add scroll if content exceeds result height */
+            box-sizing: border-box; /* Prevent padding from affecting width */
+            margin-bottom: 20px;
+            max-height: 90vh; /* Limit max height */
+        }
+
+        h1 {
+            color: #6a1b9a; /* Purple color for the heading */
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 2em; /* Adjusted size for better readability */
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #6a1b9a; /* A nice purple that complements the gradient */
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #8e24aa; /* Lighter purple on hover */
+            transform: scale(1.05); /* Slightly enlarges the button */
+        }
+
+        a:active {
+            transform: scale(1); /* Button returns to original size on click */
+        }
+
+        /* Responsive Styling for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.6em;
+            }
+            .result-box {
+                max-width: 80%; /* Make the result box take 80% of the screen width */
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4em; /* Slightly smaller title for smaller screens */
+            }
+            .result-box {
+                max-width: 95%; /* Make the result box almost full-width on very small screens */
+                padding: 15px;
+            }
+            a {
+                padding: 8px 15px; /* Adjust button padding */
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 <body>
+
+<!-- Result Box -->
+<div class="result-box">
     <h1>Prediction Result</h1>
     <p>The predicted exam score is: {{ prediction }}</p>
     <br>
     <a href="/">Go back to the form</a>
+</div>
+
 </body>
 </html>
