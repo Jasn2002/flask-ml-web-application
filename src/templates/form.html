@@ -4,23 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Performance Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .background {
+            background-color: #2e3b4e;
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            top: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            max-width: 600px;
+            z-index: 2;
+            position: relative;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enter Student Data for Performance Prediction</h1>
-    <form action="/predict" method="POST">
-        <label for="hours_studied">Hours Studied (per week):</label>
-        <input type="number" id="hours_studied" name="hours_studied" min="0" required><br><br>
+    <div class="background"></div>
+    <div class="form-container">
+        <h1>Student Performance Prediction</h1>
+        <p>This model predicts the student's exam score based on the following information:</p>
+        <ul>
+            <li>Hours studied per week</li>
+            <li>Attendance percentage</li>
+            <li>Previous test scores</li>
+            <li>Tutoring sessions per month</li>
+        </ul>
+        <p>Enter the details below to get the prediction.</p>
+        
+        <form action="/predict" method="POST">
+            <label for="hours_studied">Hours Studied (per week):</label>
+            <input type="number" id="hours_studied" name="hours_studied" min="0" required><br><br>
 
-        <label for="attendance">Attendance (%):</label>
-        <input type="number" id="attendance" name="attendance" min="0" max="100" required><br><br>
+            <label for="attendance">Attendance (%):</label>
+            <input type="number" id="attendance" name="attendance" min="0" max="100" required><br><br>
 
-        <label for="previous_scores">Previous Scores (previous test):</label>
-        <input type="number" id="previous_scores" name="previous_scores" min="0" max="100" required><br><br>
+            <label for="previous_scores">Previous Scores (previous test):</label>
+            <input type="number" id="previous_scores" name="previous_scores" min="0" max="100" required><br><br>
 
-        <label for="tutoring_sessions">Tutoring Sessions (per month):</label>
-        <input type="number" id="tutoring_sessions" name="tutoring_sessions" min="0" required><br><br>
+            <label for="tutoring_sessions">Tutoring Sessions (per month):</label>
+            <input type="number" id="tutoring_sessions" name="tutoring_sessions" min="0" required><br><br>
 
-        <input type="submit" value="Predict">
-    </form>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
 </body>
 </html>
